@@ -1,0 +1,55 @@
+.main{
+    background-image: url("../../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $black;
+    color: $white;
+    header{
+        padding: 46px 43px;
+        color: $white;
+        @extend %container;
+        nav{
+            display: flex;
+            align-items: center;
+            gap: 59px;
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 59px;
+                list-style-type: none;
+            }
+            a{
+                @include font(16px,400);
+                color: $white;
+                margin-bottom: 3px;
+                .line{
+                    width: 60%;
+                    margin: 0 auto;
+                    height: 2px;
+                    background-color: $main;
+                    opacity: 0;
+                    transition: 0.4s;
+                }
+                &:hover{
+                    .line{
+                        opacity: 100;
+                    }
+                }
+            }
+        }
+    }
+    .info{
+        padding: 100px 52px 200px 63px;
+        @extend %container;
+        .context{
+            color: rgba($color: #000, $alpha: 0.34);
+        }
+        .btn{
+            background-color: $main;
+            color: $white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+* {
+  outline: none;
+  margin: 0;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url("../fonts/MuseoSansCyrl100.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url("../fonts/MuseoSansCyrl300.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url("../fonts/MuseoSansCyrl500.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url("../fonts/MuseoSansCyrl700.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  src: url("../fonts/MuseoSansCyrl900.ttf");
+  font-weight: 900;
+}
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.btn {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff2a5a;
+  padding: 12px 23px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.main .info, .main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url("../../img/main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #202020;
+  color: #fff;
+}
+.main header {
+  padding: 46px 43px;
+  color: #fff;
+}
+.main header nav {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+}
+.main header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+  list-style-type: none;
+}
+.main header nav a {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.main header nav a .line {
+  width: 60%;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #ff2a5a;
+  opacity: 0;
+  transition: 0.4s;
+}
+.main header nav a:hover .line {
+  opacity: 100;
+}
+.main .info {
+  padding: 100px 52px 200px 63px;
+}
+.main .info .context {
+  color: rgba(0, 0, 0, 0.34);
+}
+.main .info .btn {
+  background-color: #ff2a5a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

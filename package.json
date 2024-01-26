@@ -1,4 +1,11 @@
 {
   "name": "alager-site",
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "scripts": {
+    "style": "sass -w src/scss/style.scss public/style.css"
+  },
+  "dependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.70.0"
+  }
 }

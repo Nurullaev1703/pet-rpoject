@@ -1,0 +1,22 @@
+@use "default";
+@import "font";
+@import "mixin";
+@import "colors";
+.wrapper{
+    width: 1100px;
+    margin: 0 auto;
+}
+.btn{
+    @include font(14px,400);
+    color: $main;
+    padding: 12px 23px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $white;
+}
+%container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@import "./sections/main";
