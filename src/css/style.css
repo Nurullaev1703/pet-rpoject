@@ -6,33 +6,8 @@
   text-decoration: none;
 }
 
-@font-face {
-  font-family: "Museo Sans Cyrl";
-  src: url("../fonts/MuseoSansCyrl100.ttf");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "Museo Sans Cyrl";
-  src: url("../fonts/MuseoSansCyrl300.ttf");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Museo Sans Cyrl";
-  src: url("../fonts/MuseoSansCyrl500.ttf");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Museo Sans Cyrl";
-  src: url("../fonts/MuseoSansCyrl700.ttf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Museo Sans Cyrl";
-  src: url("../fonts/MuseoSansCyrl900.ttf");
-  font-weight: 900;
-}
 .wrapper {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -45,9 +20,10 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: #fff;
+  transition: 0.4s;
 }
 
-.about .container, .about .wrapper, .about, .main .info, .main header {
+main .about .content .cards-container, main .about .wrapper, main .about .carousel, main .about .content, main .about .container, header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,7 +50,7 @@ h1.title {
   align-items: flex-end;
 }
 .slider a {
-  padding: 45px 15px;
+  padding: 19px;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -84,75 +60,103 @@ h1.title {
 .slider a.active {
   color: #ff2a5a;
   border-right: 5px solid #ff2a5a;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.main {
-  background-image: url("../img/main.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: calc(100% - 100px);
+  padding: 50px;
   color: #fff;
 }
-.main header {
-  padding: 46px 43px;
-  color: #fff;
-}
-.main header nav {
+header nav {
   display: flex;
   align-items: center;
   gap: 59px;
 }
-.main header nav ul {
+header nav ul {
   display: flex;
   align-items: center;
   gap: 59px;
   list-style-type: none;
 }
-.main header nav a {
+header nav a {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #fff;
   margin-bottom: 3px;
+  position: relative;
 }
-.main header nav a .line {
-  width: 60%;
-  margin: 0 auto;
+header nav a::before {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #ff2a5a;
   height: 2px;
-  background-color: #ff2a5a;
+  bottom: -4px;
+  left: 25%;
+  width: 50%;
   opacity: 0;
   transition: 0.4s;
 }
-.main header nav a:hover .line {
+header nav a:hover::before {
   opacity: 100;
 }
-.main .info {
-  padding: 100px 52px 200px 63px;
+header .btn:hover {
+  background-color: #ff2a5a;
+  color: #fff;
 }
-.main .info .wrapper {
+
+main .info {
+  background-image: url("../img/main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  width: 100vw;
+  aspect-ratio: 16/9;
+  height: 800px;
+  display: flex;
+  align-items: center;
+}
+main .info .info-content {
+  width: calc(100% - 100px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin-top: 100px;
+}
+main .info .info-content .wrapper {
   margin: 0;
 }
-.main .info .context {
+main .info .info-content .context {
   color: rgba(255, 255, 255, 0.34);
-  transform: rotate(-90deg);
+  writing-mode: vertical-rl;
+  margin: auto 0;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 7px;
 }
-.main .info h3 {
+main .info .info-content h3 {
   margin-bottom: 20px;
 }
-.main .info h1 {
+main .info .info-content h1 {
   margin-bottom: 46px;
 }
-.main .info p {
+main .info .info-content p {
   font-family: "Rubik", sans-serif;
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 57px;
 }
-.main .info .btn {
+main .info .info-content .btn {
   background-color: #ff2a5a;
   color: #fff;
   display: flex;
@@ -160,16 +164,99 @@ h1.title {
   gap: 20px;
   padding: 15px 30px;
 }
-.main .info .btn p {
+main .info .info-content .btn p {
   margin-bottom: 0;
 }
-.main .info .slider a.active {
-  color: #ccc;
-  border-right: 5px solid #ccc;
+main .info .info-content .btn:hover {
+  scale: 1.05;
 }
-
-.about {
-  padding: 110px 50px;
+main .info .info-content .slider a.active {
+  color: #fff;
+  border-right: 5px solid #fff;
+}
+main .about {
+  padding: 100px 50px;
+}
+main .about .title {
+  text-align: center;
+  margin-bottom: 68px;
+}
+main .about .content {
+  margin: 0 auto;
+}
+main .about .content .cards-container {
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+main .about .content .cards-container .progress-card {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #626262;
+}
+main .about .content .cards-container .progress-card:hover, main .about .content .cards-container .progress-card.active {
+  color: #ff2a5a;
+  cursor: pointer;
+}
+main .about .content .cards-container .progress-card:hover svg path, main .about .content .cards-container .progress-card:hover svg circle, main .about .content .cards-container .progress-card.active svg path, main .about .content .cards-container .progress-card.active svg circle {
+  stroke: #ff2a5a;
+}
+main .about .content .cards-container .progress-card:hover:nth-child(2) svg path, main .about .content .cards-container .progress-card.active:nth-child(2) svg path {
+  fill: #ff2a5a;
+}
+main .about .content .cards-container .progress-card:hover:nth-child(3) svg path, main .about .content .cards-container .progress-card.active:nth-child(3) svg path {
+  fill: #ff2a5a;
+}
+main .about .content .cards-container .progress-card svg {
+  margin-bottom: 24px;
+  width: 50px;
+  height: 50px;
+  stroke: #626262;
+}
+main .about .content .carousel .cover {
+  width: 33%;
+  width: 100%;
+  padding-top: 33%;
+  position: relative;
+}
+main .about .content .carousel .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .about .content .carousel .details-info .context {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #626262;
+}
+main .about .content .carousel .details-info h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 8px 0 16px;
+}
+main .about .content .carousel .details-info .description {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+main .about .content .carousel svg {
+  padding: 60px 0;
+}
+main .about .content .carousel svg path {
+  transition: 0.4s;
+}
+main .about .content .carousel svg:hover, main .about .content .carousel svg.active {
+  cursor: pointer;
+}
+main .about .content .carousel svg:hover path, main .about .content .carousel svg.active path {
+  stroke: #ff2a5a;
 }
 
 /*# sourceMappingURL=style.css.map */
