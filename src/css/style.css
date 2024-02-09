@@ -6,8 +6,12 @@
   text-decoration: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .wrapper {
-  max-width: 1100px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -15,7 +19,7 @@
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #ff2a5a;
+  color: #C91226;
   padding: 12px 23px;
   border-radius: 5px;
   cursor: pointer;
@@ -23,7 +27,7 @@
   transition: 0.4s;
 }
 
-main .about .content .cards-container, main .about .wrapper, main .about .carousel, main .about .content, main .about .container, header {
+main .interests .container, main .interests, main .partners .wrapper, main .partners, main .about .content .cards-container, main .about .wrapper, main .about .carousel, main .about .content, main .about .container, header, .text-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,9 +39,15 @@ h3 {
   font-weight: 400;
 }
 
+h4 {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 h1 {
   font-family: "Rubik", sans-serif;
-  font-size: 50px;
+  font-size: 42px;
   font-weight: 700;
 }
 h1.title {
@@ -56,10 +66,11 @@ h1.title {
   font-weight: 400;
   color: #ccc;
   border-right: 2px solid #ccc;
+  transition: 0.4s;
 }
-.slider a.active {
-  color: #ff2a5a;
-  border-right: 5px solid #ff2a5a;
+.slider a.active, .slider a:hover {
+  color: #C91226;
+  border-right: 5px solid #C91226;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -96,7 +107,7 @@ header nav a {
 header nav a::before {
   content: "";
   position: absolute;
-  border-bottom: 2px solid #ff2a5a;
+  border-bottom: 2px solid #C91226;
   height: 2px;
   bottom: -4px;
   left: 25%;
@@ -108,7 +119,7 @@ header nav a:hover::before {
   opacity: 100;
 }
 header .btn:hover {
-  background-color: #ff2a5a;
+  background-color: #C91226;
   color: #fff;
 }
 
@@ -157,7 +168,7 @@ main .info .info-content p {
   margin-bottom: 57px;
 }
 main .info .info-content .btn {
-  background-color: #ff2a5a;
+  background-color: #C91226;
   color: #fff;
   display: flex;
   align-items: center;
@@ -170,7 +181,7 @@ main .info .info-content .btn p {
 main .info .info-content .btn:hover {
   scale: 1.05;
 }
-main .info .info-content .slider a.active {
+main .info .info-content .slider a.active, main .info .info-content .slider a:hover {
   color: #fff;
   border-right: 5px solid #fff;
 }
@@ -197,17 +208,17 @@ main .about .content .cards-container .progress-card {
   color: #626262;
 }
 main .about .content .cards-container .progress-card:hover, main .about .content .cards-container .progress-card.active {
-  color: #ff2a5a;
+  color: #C91226;
   cursor: pointer;
 }
 main .about .content .cards-container .progress-card:hover svg path, main .about .content .cards-container .progress-card:hover svg circle, main .about .content .cards-container .progress-card.active svg path, main .about .content .cards-container .progress-card.active svg circle {
-  stroke: #ff2a5a;
+  stroke: #C91226;
 }
 main .about .content .cards-container .progress-card:hover:nth-child(2) svg path, main .about .content .cards-container .progress-card.active:nth-child(2) svg path {
-  fill: #ff2a5a;
+  fill: #C91226;
 }
 main .about .content .cards-container .progress-card:hover:nth-child(3) svg path, main .about .content .cards-container .progress-card.active:nth-child(3) svg path {
-  fill: #ff2a5a;
+  fill: #C91226;
 }
 main .about .content .cards-container .progress-card svg {
   margin-bottom: 24px;
@@ -256,7 +267,236 @@ main .about .content .carousel svg:hover, main .about .content .carousel svg.act
   cursor: pointer;
 }
 main .about .content .carousel svg:hover path, main .about .content .carousel svg.active path {
-  stroke: #ff2a5a;
+  stroke: #C91226;
+}
+main .employment {
+  padding: 146px 0;
+  background-image: url("../img/employment.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+main .employment .wrapper .content {
+  width: 33%;
+  display: flex;
+  gap: 70px;
+  flex-direction: column;
+}
+main .employment .wrapper .content .text-container {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+main .employment .wrapper .content .text-container p {
+  width: calc(100% - 80px);
+}
+main .employment .wrapper .content .text-container:not(:last-child) {
+  margin-bottom: 44px;
+}
+main .employment .wrapper .content .container:last-child p {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+main .employment .slider {
+  margin-right: 50px;
+}
+main .partners {
+  position: relative;
+  padding: 144px 0;
+}
+main .partners #abstract {
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+main .partners .rect {
+  width: 50%;
+  padding-top: 50%;
+  z-index: -1;
+}
+main .partners .rect.red {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #C91226;
+}
+main .partners .rect.white {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: #fbfbfb;
+}
+main .partners .wrapper {
+  align-items: flex-start;
+}
+main .partners .wrapper .container:first-child {
+  width: 40%;
+  color: #fff;
+}
+main .partners .wrapper .container:first-child h1 {
+  margin-bottom: 50px;
+}
+main .partners .wrapper .container:first-child p {
+  width: calc(100% - 80px);
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+main .partners .wrapper .container:first-child .text-container {
+  display: flex;
+  gap: 40px;
+}
+main .partners .wrapper .container:first-child .text-container:not(:last-child) {
+  margin-bottom: 50px;
+}
+main .partners .wrapper .container:last-child {
+  width: 40%;
+  margin-left: 50px;
+}
+main .partners .wrapper .table {
+  margin-top: 60px;
+}
+main .partners .wrapper .table .row {
+  display: flex;
+  justify-content: space-between;
+}
+main .partners .wrapper .table .row:not(:last-child) {
+  margin-bottom: 50px;
+}
+main .partners .wrapper .table .row .col {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .partners .wrapper .table .row .col img {
+  width: 100%;
+}
+main .partners .wrapper .table .row .col img#apple {
+  width: 40%;
+}
+main .partners .wrapper .table .row .col img#hp {
+  width: 40%;
+}
+main .partners .slider {
+  margin-right: 50px;
+}
+main .interests {
+  position: relative;
+  padding: 140px 0;
+}
+main .interests svg#abstract1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+main .interests svg#abstract2 {
+  position: absolute;
+  top: 100%;
+  right: -200px;
+  overflow: hidden;
+}
+main .interests h1 {
+  margin: 30px 0 70px;
+}
+main .interests .container .info-cards, main .interests .container .circle-carousel {
+  width: 48%;
+}
+main .interests .container .number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #C91226;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+main .interests .container .info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main .interests .container .info-cards .card {
+  border-radius: 5px;
+  border: 1px solid #b2b2b2;
+  padding: 28px 35px;
+  position: relative;
+}
+main .interests .container .info-cards .card .number {
+  position: absolute;
+  top: 20px;
+  left: -14px;
+}
+main .interests .container .info-cards .card p {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+main .interests .container .info-cards .card p.context {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #b2b2b2;
+  margin-top: 20px;
+}
+main .interests .container .circle-carousel {
+  position: relative;
+  padding-top: 33%;
+  width: 48%;
+}
+main .interests .container .circle-carousel .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  padding-top: 80%;
+  border: 1px solid #C91226;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+main .interests .container .circle-carousel svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .interests .container .circle-carousel .text-container {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+main .interests .container .circle-carousel .text-container p {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+main .interests .container .circle-carousel .text-container:nth-child(3) {
+  top: calc(100% + 10px);
+  right: -9%;
+}
+main .interests .container .circle-carousel .text-container:nth-child(4) {
+  top: 70%;
+  right: -17%;
+}
+main .interests .container .circle-carousel .text-container:nth-child(5) {
+  top: 20%;
+  right: -9%;
+}
+main .interests .container .circle-carousel .text-container:nth-child(6) {
+  top: -10%;
+  right: -9%;
 }
 
 /*# sourceMappingURL=style.css.map */

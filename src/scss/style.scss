@@ -1,8 +1,11 @@
 @use "default";
 @import "mixin";
 @import "colors";
+body{
+  overflow-x: hidden;
+}
 .wrapper {
-  max-width: 1100px;
+  width: 1100px;
   margin: 0 auto;
 }
 .btn {
@@ -22,8 +25,11 @@
 h3 {
   @include font(24px, 400);
 }
+h4 {
+  @include font(16px, 400);
+}
 h1 {
-  @include font(50px, 700);
+  @include font(42px, 700);
   &.title {
     color: $black;
   }
@@ -32,18 +38,21 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  a {
+  a{
     padding: 19px;
     @include font(14px, 400);
     color: $slider;
     border-right: 2px solid $slider;
-    &.active {
+    transition: 0.4s;
+    &.active,&:hover {
       color: $main;
       border-right: 5px solid $main;
       @include font(14px,700);
     }
   }
 }
-
+.text-container{
+  @extend %container;
+}
 @import "./sections/header";
 @import "./sections/main";
