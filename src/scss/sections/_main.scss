@@ -53,7 +53,7 @@ main{
             }
             .slider {
                 a{
-                    &.active {
+                    &.active,&:hover {
                         color: $white;
                         border-right: 5px solid $white;
                     }
@@ -136,6 +136,237 @@ main{
                         path{
                             stroke: $main;
                         }
+                    }
+                }
+            }
+        }
+    }
+    .employment{
+        padding: 146px 0;
+        background-image: url("../img/employment.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $white;
+        .wrapper{
+            .content{
+                width: 33%;
+                display: flex;
+                gap: 70px;
+                flex-direction: column;
+                .text-container{
+                    width: 100%;
+                    @include font(14px,400);
+                    p{
+                        width: calc(100% - 80px);
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 44px;
+                    }
+                }
+                .container:last-child{
+                    p{
+                        @include font(14px,400);
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+        .slider{
+            margin-right: 50px;
+        }
+    }
+    .partners{
+        @extend %container;
+        position: relative;
+        padding: 144px 0;
+        #abstract{
+            position: absolute;
+            top: 10%;
+            left: 0;
+        }
+        .rect{
+            width: 50%;
+            padding-top: 50%;
+            z-index: -1;
+            &.red{
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $main;
+            }
+            &.white{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                background-color: $light;
+            }
+        } 
+        .wrapper{
+            @extend %container;
+            align-items: flex-start;
+            .container{
+                &:first-child{
+                    width: 40%;
+                    color: $white;
+                    h1{
+                        margin-bottom: 50px;
+                    }
+                    p{
+                        width: calc(100% - 80px);
+                        @include font(20px,300);
+                    }
+                    .text-container{
+                        display: flex;
+                        gap: 40px;
+                        &:not(:last-child){
+                            margin-bottom: 50px;
+                        }
+                    }
+
+                }
+                &:last-child{
+                    width: 40%;
+                    margin-left: 50px;
+                }
+            }
+            .table{
+                margin-top: 60px;
+                .row{
+                    display: flex;
+                    justify-content: space-between;
+                    &:not(:last-child){
+                        margin-bottom: 50px;
+                    }
+                    .col{
+                        width: 22%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: 100%;
+                            &#apple{
+                                width: 40%;
+                            }
+                            &#hp{
+                                width: 40%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slider{
+            margin-right: 50px;
+        }
+    }
+    .interests{
+        position: relative;
+        @extend %container;
+        padding: 140px 0;
+        svg{
+            &#abstract1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+            }
+            &#abstract2{
+                position: absolute;
+                top: 100%;
+                right: -200px;
+                overflow: hidden;
+            }
+        }
+        h1{
+            margin: 30px 0 70px;
+        }
+        .container{
+            @extend %container;
+            .info-cards,.circle-carousel{
+                width: 48%;
+            }
+            .number{
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: $main;
+                @include font(20px,400);
+                color: $white;
+            }
+            .info-cards{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                .card{
+                    border-radius: 5px;
+                    border: 1px solid $context;
+                    padding: 28px 35px;
+                    position: relative;
+                    .number{
+                        position: absolute;
+                        top: 20px;
+                        left: -14px;
+                    }
+                    p{
+                        @include font(18px,400);
+                        &.context{
+                            @include font(14px,300);
+                            color: $context;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+            .circle-carousel{
+                position: relative;
+                padding-top: 33%;
+                width: 48%;
+                .circle{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 80%;
+                    padding-top: 80%;
+                    border: 1px solid $main;
+                    border-radius: 50%;
+                    transform: translate(-50%,-50%);
+                }
+                svg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+                .text-container{
+                    position: absolute;
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    p{
+                        @include font(16px,300);
+                    }
+                    &:nth-child(3){
+                        top: calc(100% + 10px);
+                        right: -9%;
+                    }
+                    &:nth-child(4){
+                        top: 70%;
+                        right: -17%;
+                    }
+                    &:nth-child(5){
+                        top: 20%;
+                        right: -9%;
+                    }
+                    &:nth-child(6){
+                        top: -10%;
+                        right: -9%;
                     }
                 }
             }
