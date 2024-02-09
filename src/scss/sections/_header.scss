@@ -46,4 +46,14 @@ header{
             color: $white;
         }
     }
+    .burger-menu{
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        .line{
+            width: 20px;
+            height: 2px;
+            background-color: $white;
+        }
+    }
 }
