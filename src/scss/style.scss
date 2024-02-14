@@ -1,8 +1,12 @@
 @use "default";
 @import "mixin";
 @import "colors";
-body{
+html{
+  scroll-behavior: smooth;
+}
+body,main{
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
 }
 .wrapper {
   width: 1100px;
@@ -54,6 +58,24 @@ h1 {
 .text-container{
   @extend %container;
 }
+
+@keyframes open {
+  0%{
+    transform: translateX(100%)
+  }
+  100%{
+    transform: translateX(0)
+  }
+}
+@keyframes close {
+  0%{
+    transform: translateX(0)
+  }
+  100%{
+    transform: translateX(100%)
+  }
+}
+
 @import "./sections/header";
 @import "./sections/main";
 @import "./sections/footer";

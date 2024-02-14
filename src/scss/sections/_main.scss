@@ -30,7 +30,8 @@ main{
             h3{
                 margin-bottom: 20px;
             }
-            h1{
+            h2{
+                @include font(50px,500);
                 margin-bottom: 46px;
             }
             p{
@@ -189,7 +190,7 @@ main{
         }
         .rect{
             width: 50%;
-            padding-top: 40%;
+            padding-top: 50%;
             z-index: -1;
             &.red{
                 position: absolute;
@@ -272,12 +273,14 @@ main{
                 top: 0;
                 left: 0;
                 overflow: hidden;
+                z-index: -1;
             }
             &#abstract2{
                 position: absolute;
                 bottom: 0;
                 right: -200px;
                 overflow: hidden;
+                z-index: -1;
             }
         }
         h1{
@@ -524,6 +527,9 @@ main{
                     }
                 }
             }
+        }
+        .slider{
+            margin-right: 50px;
         }
     }
 }

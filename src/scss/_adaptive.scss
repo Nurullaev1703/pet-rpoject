@@ -3,16 +3,266 @@
         overflow-x: hidden;
     }
     .wrapper{
-        width: 96vw;
-        padding: 0 2vw;
+        max-width: 96vw;
+        flex-wrap: wrap;
+    }
+    h3{
+        @include font(12px,400);
     }
     h1{
-        @include font(18px, 700);
+        @include font(32px, 700);
+    }
+    
+    header{
+        padding: 40px 25px;
+        width: calc(100% - 50px);;
     }
     header nav, .slider{
         display: none;
     }
+    header nav.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+        background-color: $main;
+        display: block;
+        ul{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            padding-left: 0;
+            li{
+                padding: 10px 0;
+            }
+            li a{
+                @include font(24px, 400);
+            }
+        }
+    }
     header .burger-menu{
         display: flex;
+    }
+
+    // info
+    main .info .info-content .context{
+        display: none;
+    }
+    main .info .info-content p{
+        @include font(12px,400);
+    }
+    main .info{
+        height: 560px;
+    }
+    main .info .info-content{
+        padding: 0 25px;
+        margin-top: 20px;
+        width: calc(100% - 50px);
+    }
+    main .info .info-content h2{
+        @include font(18px,700);
+    }
+
+    //about
+    main .about{
+        padding: 50px 25px;
+    }
+    main .about .content .cards-container.wrapper{
+        flex-wrap: wrap;
+        margin: 0 0 16px;
+        width: 90%;
+    }
+    main .about .content .cards-container .progress-card p{
+        display: none;
+        width: fit-content;
+    }
+    main .about .content .cards-container .progress-card{
+        width: 20%;
+        height: 60px;
+    }
+    main .about .content .cards-container .progress-card svg{
+        margin-bottom: 0;
+    }
+    main .about .title{
+        text-align: start;
+    }
+    main .about .carousel{
+        svg,img{
+            display: none;
+        }
+    }
+    main .about .content .carousel .cover{
+        padding-top: 45px;
+    }
+    main .about .content .carousel{
+        width: 85%;
+    }
+    main .employment{
+        padding: 50px 0;
+    }
+    main .employment .wrapper .content{
+        width: 85%;
+        padding: 0 25px;
+    }
+
+    //partners 
+    main .partners{
+        padding: 50px 0;
+    }
+    main .partners .rect.red{
+        width: 100%;
+        padding-top: 550px;
+    }
+    main .partners .rect.white{
+        width: 100%;
+        padding-top: 550px;
+        top: 100%;
+        bottom: 0;
+    }
+    main .partners .wrapper{
+        flex-wrap: wrap;
+    }
+    main .partners .wrapper .container:first-child{
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+    main .partners .wrapper .container:last-child{
+        padding: 0 20px;
+        width: calc(100% - 40px);
+        margin-top: 100px;
+        margin-left: 0;
+    }
+
+    // interests
+    main .interests{
+        padding: 50px 0;
+    }
+    main .interests .container{
+        flex-wrap: wrap;
+    }
+    main .interests .container .info-cards, main .interests .container .circle-carousel{
+        width: 90%;
+        margin: 0 auto;
+    }
+    main .interests .container .circle-carousel{
+        padding-top: 100%;
+        margin-top: 55px;
+    }
+    main .interests svg#abstract2{
+        display: none;
+    }
+    main .interests h1{
+        margin: 30px 20px 50px;
+    }
+    main .interests #logo{
+        margin-left: 20px;
+    }
+    main .interests .container .circle-carousel .bg{
+        top: 0;
+        left: -50px;
+    }
+    main .interests .container .circle-carousel .circle{
+        left: 20%;
+    }
+    main .interests .container .circle-carousel svg{
+        left: 35%;
+    }
+    main .interests .container .circle-carousel .text-container:nth-child(7){
+        top: 13%;
+    }
+    main .interests .container .circle-carousel .text-container p{
+        width: 60%;
+    }
+    main .interests .container .circle-carousel .text-container{
+        justify-content: flex-start;
+    }
+    main .interests .container .circle-carousel .text-container:nth-child(6){
+        top: 37%;
+        right: 8%;
+    }
+    main .interests .container .circle-carousel .text-container:nth-child(5){
+        top: 60%;
+        right: -2%;
+    }
+    main .interests .container .circle-carousel .text-container:nth-child(4){
+        top: 75%;
+        right: -15%;
+    }
+
+    // cards
+    main .cards{
+        padding: 45px 0;
+    }
+    main .cards .slide-menu{
+        display: none;
+    }
+    main .cards h1{
+        text-align: center;
+    }
+    main .cards .wrapper .cards-container .card{
+        width: 90%;
+        margin: 0 auto;
+    }
+    main .cards .wrapper .cards-container .card .card-inner{
+        height: fit-content;
+    }
+    main .cards .wrapper .cards-container .card:not(:first-child){
+        display: none;
+    }
+    main .cards .wrapper .alternate-slide-menu{
+        width: 50%;
+        margin: 20px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .circle-container{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .circle{
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $black;
+            }
+            &.active{
+                border: 1px solid $main;
+                .circle{
+                    background-color: $main;
+                }
+            }
+        }
+    }
+
+    // project
+    main .project{
+        padding: 45px 0;
+    }
+    main .project .wrapper .icons{
+        margin-top: 45px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    main .project .wrapper .icons .icon{
+        width: 33%;
+    }
+
+    // footer
+    footer .wrapper{
+        flex-direction: column;
+        gap: 30px;
+    }
+    footer .wrapper .text-container{
+        flex-direction: column;
+        gap: 30px;
     }
 }
