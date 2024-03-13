@@ -2,10 +2,13 @@
   "name": "alager-site",
   "packageManager": "yarn@4.0.2",
   "scripts": {
-    "style": "sass -w src/scss/style.scss src/css/style.css"
+    "style": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "dependencies": {
     "node-sass": "^9.0.0",
     "sass": "^1.70.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }
